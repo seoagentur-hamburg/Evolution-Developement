@@ -1,0 +1,236 @@
+/**, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.post-type-evolution_intro .postbox .inside {
+	padding: 0;
+} 
+
+.post-type-evolution_intro #poststuff .inside {
+	margin: 0;
+}
+
+.post-type-evolution_intro .postbox-container .cmb-repeat-group-field {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.post-type-evolution_intro .postbox-container .cmb-group-title {
+	margin: 0;
+}
+
+.post-type-evolution_intro .cmb2-wrap .cmb-group-title {
+	border-bottom: 0 !important;
+}
+
+.post-type-evolution_intro .postbox-container .cmb-row {
+	padding: 0 !important;
+}
+
+.post-type-evolution_intro .cmb2-wrap .cmb-repeatable-group .cmb-group-title .cmb-th {
+	padding: 0.75em 1em;
+	background: #1E8CBE;
+	color: #fff;
+}*/
+
+.select2-container {
+	min-width: 200px;
+}
+
+.no-border {
+	border: none !important;
+}
+
+#cmb2-metabox-select_intro .cmb-row:not(.cmb2-id--evolution-select-intro-parse) {
+	display: none;
+}
+
+.postbox-container .cmb-row {
+	padding-bottom: 1em !important;
+	padding-top: 1em !important;
+}
+
+.postbox-container .cmb-repeatable-group {
+	border: none;
+}
+
+.postbox-container .cmb-repeatable-grouping.cmb-row {
+	padding-top: 0 !important;	
+}
+
+.cmb-type-checkbox .cmb-td {
+	padding-top: 0.2em;
+}
+
+.post-type-evolution_intro .cmb-row.cmb-group-title,
+.post-type-evolution_timeline .cmb-row.cmb-group-title {
+	padding-top: 0 !important;	
+}
+
+.post-type-evolution_intro .cmb-repeatable-grouping .cmb-nested .cmb-row:not([class*="slide-select-image"]):not([class*="slide-type"]):not([class*="slide-more-options-trigger"]):not(.cmb-group-title):not(.cmb-remove-field-row) {
+	display: none;
+}
+
+.post-type-evolution_intro .cmb2-wrap .cmb-repeatable-group .cmb-group-title .cmb-th,
+.post-type-evolution_timeline .cmb2-wrap .cmb-repeatable-group .cmb-group-title .cmb-th {
+	width: auto;
+	padding: 10px;
+	background: #E0E0E0;
+	color: #0074A2;	
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.post-type-evolution_intro .cmb2-wrap .cmb-repeatable-group .cmb-group-title .cmb-th h4,
+.post-type-evolution_timeline .cmb2-wrap .cmb-repeatable-group .cmb-group-title .cmb-th h4 {
+	font-weight: 700;
+}
+
+.post-type-evolution_intro .cmb2-wrap .cmb-repeatable-group .cmb-group-title .cmb-th:hover {
+	background-color: #DADADA;
+}
+
+.post-type-evolution_intro .cmb2-wrap .cmb-repeatable-group .expanded .cmb-group-title .cmb-th {
+	color: #FFF;
+	background: #2EA2CC;
+}
+
+.post-type-evolution_intro .cmb2-wrap .cmb-group-title,
+.post-type-evolution_timeline .cmb2-wrap .cmb-group-title {
+	border-bottom: 4px solid #E0E0E0 !important;
+}
+
+.post-type-evolution_intro .cmb2-wrap .expanded .cmb-group-title {
+	border-bottom: 4px solid #2EA2CC !important;
+}
+
+.post-type-evolution_intro .postbox-container .cmb-repeatable-group>.cmb-row,
+.post-type-evolution_timeline .postbox-container .cmb-repeatable-group>.cmb-row {
+	margin-bottom: 2em;
+}
+
+.cmb-row:last-child, .cmb2-wrap .cmb-row:last-child {
+	margin-bottom: 0 !important;
+}
+
+.cmb-add-row {
+	margin: 0;
+}
+
+.post-type-evolution_intro .cmb-repeatable-grouping+.cmb-repeatable-grouping {
+	border-top: none;
+}
+
+.post-type-evolution_intro .intro-more-options {
+	color: #0074A2;
+	text-align: center;
+	display: block;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.post-type-evolution_intro .intro-more-options:active,
+.post-type-evolution_intro .intro-more-options:hover {
+	color: #2EA2CC;
+}
+
+.visuallyhidden { 
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px; width: 1px; 
+	margin: -1px; padding: 0; border: 0; 
+}
+
+#side-sortables .cmb-th label {
+	font-size: 13px;
+	color: #444;
+	padding-bottom: 0;
+}
+
+#side-sortables .cmb-th label:after {
+	display: none;
+}
+
+#side-sortables .cmb-row .cmb2-metabox-description {
+	padding-bottom: 1em;
+}
+
+.dashicons-rotate-90 {
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.dashicons-rotate-180 {
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.dashicons-rotate-270 {
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	-webkit-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+
+.cmb2-id--evolution-items-per-page input[type=text] {
+	width: 25% !important;
+}
+
+.shortcode-options .percent {
+	width: 100px !important;
+	text-align: center;
+}
+
+.shortcode-options .noUi-connect {
+	background-color: #007FB1;
+	background-image: -khtml-gradient(linear,left top,left bottom,from(#0099d5),to(#007fb1));
+	background-image: -moz-linear-gradient(top,#0099d5,#007fb1);
+	background-image: -ms-linear-gradient(top,#0099d5,#007fb1);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#0099D5),color-stop(100%,#007FB1));
+	background-image: -webkit-linear-gradient(top,#0099D5,#007FB1);
+	background-image: -o-linear-gradient(top,#0099d5,#007fb1);
+	background-image: linear-gradient(top,#0099d5,#007fb1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@from', endColorstr='@to', GradientType=0);
+}
+
+.shortcode-options .percent-slider {
+	margin-left: 25px;
+	margin-right: 25px;
+	width: 200px;
+	display: inline-block;
+}
+
+.evolution-shortcode-generator span.wp-shortcode-buttons-icon {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-top;
+	margin: 0 2px;
+}
+
+.evolution-shortcode-generator span.wp-shortcode-buttons-icon:before {
+	font: 400 18px/1 dashicons;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f475';
+}
+
+@media screen and (max-width:782px) {
+	.evolution-shortcode-generator span.wp-shortcode-buttons-icon {
+		width: 22px !important;
+		margin-top: -3px !important;
+		margin-left: -5px !important;
+	}
+	.evolution-shortcode-generator span.wp-shortcode-buttons-icon:before {
+		font-size: 20px !important;
+	}
+}
