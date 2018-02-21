@@ -43,7 +43,7 @@ do_action( 'evolution_do_header' );
 do_action( 'evolution_after_header' );
 
 
-if ( is_front_page() || is_page() || is_home() ) : 
+if ( is_front_page() || is_page() || is_home() || is_single() ) : 
 
 get_template_part( 'section', 'intro' ); 
 

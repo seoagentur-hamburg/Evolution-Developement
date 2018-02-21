@@ -217,19 +217,21 @@ function evolution_config_metaboxes( array $meta_boxes ) {
             )
         )
     );
-
+//$screens = get_post_types();
     /* Call Intro */
     $meta_boxes['select_intro'] = array(
         'id' => 'select_intro',
         'title' => __( 'Intro settings', 'evolution-pro' ),
-        'object_types' => array_merge( array( 'page' ) ),
+        'object_types' => get_post_types( array(
+                'public' => true
+            ) ), //Add Intros to all existing and new created post types
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
         'fields' => array(
             array(
                 'name' => __( 'Select Intro', 'evolution-pro' ),
-                'desc' => __( 'None', 'evolution-pro' ),
+                'desc' => __( 'Choose one', 'evolution-pro' ),
                 'description' => __( 'Pick an <a href="'. admin_url( 'edit.php?post_type=evolution_intro' ) .'">precomposed intro</a> or use the <strong>Featured image</strong> to show into the intro area', 'evolution-pro' ),
                 'id' => $prefix . 'select_intro_parse',
                 'type' => 'pw_select',

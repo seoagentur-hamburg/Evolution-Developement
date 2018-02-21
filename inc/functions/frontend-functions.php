@@ -260,9 +260,9 @@ global $post;
 
 <div class="share-buttons-flex">
     <ul class="evolution-share-buttons">
-        <li><a class="facebook" title="Bei Facebook empfehlen" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" rel="nofollow"><i class="icon-facebook" aria-hidden="true"></i> <?php esc_html_e( 'Share', 'evolution' ); ?></a></li>
-        <li><a class="twitter" title="Bei Twitter empfehlen" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?> <?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" rel="nofollow"><i class="icon-twitter" aria-hidden="true"></i> <?php esc_html_e( 'Tweet', 'evolution' ); ?></a></li>
-        <li class="last"><a class="googleplus" title="Bei Google+ empfehlen" href="https://plusone.google.com/_/+1/confirm?hl=de&amp;url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" rel="nofollow"><i class="icon-google-plus" aria-hidden="true"></i> <?php esc_html_e( 'Share', 'evolution' ); ?></a></li>
+        <li><a class="facebook" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" rel="nofollow"><i class="icon-facebook" aria-hidden="true"></i> <?php esc_html_e( 'Share', 'evolution' ); ?></a></li>
+        <li><a class="twitter" title="Tweet this" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?> <?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" rel="nofollow"><i class="icon-twitter" aria-hidden="true"></i> <?php esc_html_e( 'Tweet', 'evolution' ); ?></a></li>
+        <li class="last"><a class="googleplus" title="Share on Google+" href="https://plusone.google.com/_/+1/confirm?hl=de&amp;url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" rel="nofollow"><i class="icon-google-plus" aria-hidden="true"></i> <?php esc_html_e( 'Share', 'evolution' ); ?></a></li>
     </ul>
 </div>
 <?php }
@@ -343,3 +343,21 @@ function evolution_excerpt_more() {
 add_filter( 'excerpt_more', 'evolution_excerpt_more' );
 endif;
 
+
+
+
+if ( ! function_exists( 'evolution_add_menu_attributes' ) ) :
+/**
+ * Adds navigation menu attributes for Schema.org SiteNavigationElement
+ * 
+ * @author Andreas Hecht
+ * @since 2.2.0        
+ * 
+ * @return attributes
+ */
+function evolution_add_menu_attributes( $atts, $item, $args ) {
+  $atts['itemprop'] = 'url';
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'evolution_add_menu_attributes', 10, 3 );
+endif;

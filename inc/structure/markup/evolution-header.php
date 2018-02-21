@@ -97,7 +97,7 @@ function evolution_header_top_markup() {
     $header_class = 'small-header'; 
     endif;
 
-    if ( $intro_meta && is_front_page() || is_page() || is_home() )  {
+    if ( $intro_meta && is_front_page() || is_page() || is_home() || is_singular() )  {
         $extra_body_class = ' has-intro';
     } else {
         $extra_body_class = ' no-intro';
@@ -115,7 +115,7 @@ function evolution_header_top_markup() {
     
     if ( $parallax == "true"  && $header_layout == "header-2" ) {
         $extra_body_class = 'parallax';
-        $header_class = ' big-header non-fixed-header';		
+        $header_class = 'big-header scrollable skrollable skrollable-between';		
     }
     if ( $parallax == "true" && $header_layout == "header-1" ) {
         $extra_body_class = 'parallax has-intro';
@@ -176,7 +176,7 @@ function evolution_branding() {
     // Get theme navigation
     if ( ! get_theme_mod( 'evolution_hide_navigation' ) ) :
 
-    echo '<div class="clear"></div>', "\n", '<nav id="site-navigation" class="main-navigation">', "\n", '<button class="menu-toggle"><span class="menu-text">';
+    echo '<div class="clear"></div>', "\n", '<nav id="site-navigation" class="main-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">', "\n", '<button class="menu-toggle"><span class="menu-text">';
 
     esc_html_e( 'Menu', 'evolution' );
 
@@ -193,7 +193,7 @@ function evolution_branding() {
     endif; 
     
 }
-endif;
+endif; 
 
 
 
@@ -233,7 +233,7 @@ function evolution_branding_nav() {
 
     echo '</div><!-- .evo-one-third -->', "\n", '<div class="evo-two-third evo-column-last">', "\n";
 
-    echo '<div class="clear"></div>', "\n", '<nav id="site-navigation" class="main-navigation">', "\n", '<button class="menu-toggle"><span class="menu-text">';
+    echo '<div class="clear"></div>', "\n", '<nav id="site-navigation" class="main-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">', "\n", '<button class="menu-toggle"><span class="menu-text">';
 
     esc_html_e( 'Menu', 'evolution' );
 

@@ -13,10 +13,10 @@ License: GPLv2+
  * Enqueue scripts and styles, call requested select box field
  */
 function pw_select2( $field, $meta ) {
-	wp_enqueue_script( 'pw-select2-field-js', get_template_directory_uri() . '/admin/meta/cmb-field-select2/js/select2/select2.min.js', array( 'jquery-ui-sortable' ), '3.5.1' );
-	wp_enqueue_script( 'pw-select2-field-init', get_template_directory_uri() . '/admin/meta/cmb-field-select2/js/select2-init.js', array( 'pw-select2-field-js' ), null );
-	wp_enqueue_style( 'pw-select2-field-css', get_template_directory_uri() . '/admin/meta/cmb-field-select2/js/select2/select2.css', array(), '3.5.1' );
-	wp_enqueue_style( 'pw-select2-field-mods', get_template_directory_uri() . '/admin/meta/cmb-field-select2/css/select2.css', array(), null );
+	wp_enqueue_script( 'pw-select2-field-js', get_template_directory_uri() . '/inc/meta/cmb-field-select2/js/select2/select2.min.js', array( 'jquery-ui-sortable' ), '3.5.1' );
+	wp_enqueue_script( 'pw-select2-field-init', get_template_directory_uri() . '/inc/meta/cmb-field-select2/js/select2-init.js', array( 'pw-select2-field-js' ), null );
+	wp_enqueue_style( 'pw-select2-field-css', get_template_directory_uri() . '/inc/meta/cmb-field-select2/js/select2/select2.css', array(), '3.5.1' );
+	wp_enqueue_style( 'pw-select2-field-mods', get_template_directory_uri() . '/inc/meta/cmb-field-select2/css/select2.css', array(), null );
 
 	call_user_func( $field->args('type'), $field->args(), $meta );
 
