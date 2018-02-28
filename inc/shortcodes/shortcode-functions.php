@@ -33,6 +33,8 @@ function enqueue_shortcodes_scripts() {
 	
     wp_enqueue_style( 'magnific', get_template_directory_uri() . '/inc/shortcodes/includes/css/magnific-popup.css' ); 
     wp_enqueue_script( 'magnific', get_template_directory_uri() . '/inc/shortcodes/includes/js/magnific-popup.js','jquery','0.9.7 ', TRUE );
+    
+    wp_enqueue_script( 'wp-color-picker' );
 	
     wp_enqueue_script( 'evolution-shortcode-js', get_template_directory_uri() . '/inc/shortcodes/includes/js/evolution-shortcode.js','jquery',EVOLUTION_THEME_VERSION , TRUE );
 	
@@ -1447,84 +1449,39 @@ function content_display() {
 			),
 		)
 	);
-		 
-	$evolution_shortcodes['header_fetch'] = array( 
-		'type' => 'heading', 
-		'title' => __( 'Blog or Portfolio', 'evolution-pro' )
-	);
+    
+// Alerts #####################################################    
 
-	/* Mokaine Blog fetching */
-	$blog_types = get_categories();
-
-	$blog_options = array( 'all' => __( 'All', 'evolution-pro' ) );
-
-	foreach ( $blog_types as $type ) {
-		$blog_options[ $type->slug ] = $type->name;
-	}
-
-	$evolution_shortcodes['blog'] = array( 
-		'type' => 'self_closing', 
-		'title' => __( 'Blog', 'evolution-pro' ), 
-		'attr' => array( 
-			'style' => array(
+    $evolution_shortcodes['alertbox'] = array( 
+		'type' => 'self_closing',
+		'title' => __( 'Alert boxes', 'evolution-pro' ), 
+		'attr' => array(
+			'text' => array(
+				'type' => 'textarea', 
+				'title' => __( 'Alert text', 'evolution-pro' ),
+				'default' => __( 'Your text...', 'evolution-pro' )
+			),					
+			'color' => array(
 			    'type' => 'select',
-			    'title' => __( 'Blog style', 'evolution-pro' ),
-			    'values' => array(
-			        'list' => __( 'List style', 'evolution-pro' ),
-			        'masonry' => __( 'Masonry style', 'evolution-pro' )                                                     
-			    )
-			), 		
-			'articles' => array(
-				'type' => 'text', 
-				'title' => __( 'Articles to show', 'evolution-pro' ),
-			    'desc' => __( 'The number of articles you want to show', 'evolution-pro' ),				
-				'default' => 8,
-			),
-			'category' => array(
-				'type' => 'multi-select',
-				'title' => 'Blog categories',
-				'desc' => __( 'Select the categories you want to show for your blog. <br/>You can select multiple categories too (ctrl + click on PC and command + click on Mac).', 'evolution-pro' ),
-				'values' => $blog_options
-			),		
-			'button_text' => array(
-				'type' => 'text', 
-				'title' => __( 'Button text', 'evolution-pro' ),
-				'default' => __( 'Button', 'evolution-pro' )
-			),
-			'button_url' => array(
-				'type' => 'text', 
-				'title' => __( 'Button link', 'evolution-pro' )
-			),
-			'button_style' => array(
-				'type' => 'select',
-				'title' => __( 'Button style', 'evolution-pro' ),
-				'values' => array(
-				    'solid' => __( 'Solid', 'evolution-pro' ),
-			  		'transparent' => __( 'Transparent', 'evolution-pro' )
-				)			
-			),	
-			'button_color' => array(
-			    'type' => 'select',
-			    'title' => __( 'Button color', 'evolution-pro' ),
+			    'title' => __( 'Alert box color', 'evolution-pro' ),
 			    'values' => array(
 			        'red' => __( 'Red', 'evolution-pro' ),
 			        'green' => __( 'Green', 'evolution-pro' ),
-			        'blue' => __( 'Blue', 'evolution-pro' ),
-			        'white' => __( 'White', 'evolution-pro' ),
-			        'dark-grey' => __( 'Dark grey', 'evolution-pro' )                                                       
+			        'blue' => __( 'Blue', 'evolution-pro' ), 
+			        'grey' => __( 'Grey', 'evolution-pro' )                                                       
 			    )
 			), 
-			'open_new_tab' => array(
-				'type' => 'checkbox', 
-				'title' => __( 'Open link in a new tab?', 'evolution-pro' ),
-				'desc' => __( 'Check this if you want to open the link in a new page', 'evolution-pro' )				
-			),
-			'info' => array(
-				'type' => 'infobox',
-				'title' => __( 'Note:', 'evolution-pro' ),
-				'desc' => __( 'If you are using a <strong>Blank page</strong> template, we recommend to nest the <strong>blog</strong> shortcode into a <strong>Full Width Section</strong> shortcode.', 'evolution-pro' )
-			)							
-		)
+			'icon_type' => array(
+				'type' => 'icon', 
+				'title' => __( 'Alert icon', 'evolution-pro' ),
+				'values' => array(
+					'fa-icons' => array(
+						'title' => __( 'Font Awesome', 'evolution-pro' ),
+						'iconopt' => $fa_icons
+					),
+				)
+			),			
+		) 
 	);
 		
 	/* The HTML inside the popup */
@@ -1733,15 +1690,15 @@ function evolution_option_element( $name, $attr_option, $type, $shortcode ) {
 
 			if( get_bloginfo( 'version' ) >= '3.5' ) {
 
-			   $option_element .= '<div class="content content-color content-' . $name . '"><input type="text" id="' . $shortcode . '-' . $name . '" data-attrname="' . $name . '" class="popup-colorpicker" data-default-color="" value=""></div>';
+			   $option_element .= '<div class="content content-color content-' . $name . '"><input type="text" id="' . $shortcode . '-' . $name . '" data-attrname="' . $name . '" class="popup-colorpicker wp-color-picker" data-default-color="" value=""></div>';
 
 	        } else {
 
-	           $option_element .= __( 'You&lsquo;re using an outdated version of WordPress. Please update to use this feature.', 'evolution-pro' );
+	           $option_element .= __( 'You&lsquo;re using an outdated version of WordPress. Please update to use this feature.', EVOLUTION_THEME_NAME );
 
 	        }	
 
-			break;		
+			break;	
 
 		case 'image':
 

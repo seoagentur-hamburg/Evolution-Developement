@@ -12,6 +12,9 @@ jQuery(document).ready(function($){
 	$('#evolution-shortcodes').change(function() {
 		handleButton();
 	});
+    
+    
+    $('.wp-color-picker').wpColorPicker();
 
 
 	// Upload function
@@ -208,12 +211,10 @@ jQuery(document).ready(function($){
 		else if( $('#options-testimonial').is(':visible') ) {
 			$('#options-testimonial .shortcode-dynamic-item').each(function() {
 				testimonialAuthor = $(this).find('.shortcode-dynamic-item-input:nth-child(1)').val();
-                testimonialWebsite = $(this).find('input.website') .val();
 				testimonialQuote = ($(this).find('textarea[data-attrname="content_inside"]').val().length > 0) ? $(this).find('textarea[data-attrname="content_inside"]').val() : '';
 				testimonialImage = $(this).find('.image-screenshot:first').attr('src');
 
 				var testimonialImageData = testimonialAuthorData = '';
-                var testimonialImageData = testimonialWebsiteData = '';
 
 				if ( testimonialImage != '' ) {
 					testimonialImageData = ' image_url="' + testimonialImage + '"';
@@ -222,11 +223,8 @@ jQuery(document).ready(function($){
 				if ( testimonialAuthor != '' ) {
 					testimonialAuthorData = ' author="' + testimonialAuthor + '"';
 				}
-                if ( testimonialWebsite != '' ) {
-					testimonialWebsiteData = ' website="' + testimonialWebsite + '"';
-				}
 				
-				code += '&lt;br&gt;[quote' + testimonialImageData + testimonialAuthorData + testimonialWebsiteData + ']' + testimonialQuote + '[/quote]'; 
+				code += '&lt;br&gt;[quote' + testimonialImageData + testimonialAuthorData + ']' + testimonialQuote + '[/quote]'; 
 			});
 			code += '&lt;br&gt;';
 		}			

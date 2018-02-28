@@ -1,3 +1,5 @@
+/* Generator CSS */
+
 [class^="icon-"],[class*=" icon-"] {
 	color: #333!important;
 }
@@ -263,10 +265,10 @@ label#option-label {
 	max-width: 980px;
 	position: relative;
 	margin: 55px auto 20px auto;
-	padding: 20px;
+	padding: 0 0 20px 0;
 	min-height: 350px;
 	height: auto;
-	background-color: #f8f8f8;
+	background-color: #f3f3f3;
 	border-radius: 2px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -275,22 +277,41 @@ label#option-label {
 	-webkit-box-shadow: 0 0 26px rgba(0, 0, 0, 0.4);
 	-o-box-shadow: 0 0 26px rgba(0, 0, 0, 0.4);
 }
-
+.shortcode-header {
+    padding: 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+.shortcode-header h1 {
+    font-size: 1.7em;
+}
 #evolution-sc-header {
 	padding: 20px;
 	text-shadow: none!important;
-	margin: -20px -20px 30px -20px;
-	background-color: #f1f1f1;
+	margin: 0px 20px 30px 20px;
 	border-radius: 2px 2px 0 0;
 	-moz-border-radius: 2px 2px 0 0;
 	-webkit-border-radius: 2px 2px 0 0;
 }
-
+#evolution-sc-header .chosen-container-single .chosen-default {
+    color: #666;
+    border: 1px solid #ccc;
+}
+#evolution-sc-generator .shortcode-options {
+    padding: 20px 30px 25px 30px;
+    background: #fafafa;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ddd;
+}
+#evolution-sc-generator .shortcode-button {
+    padding: 20px 30px 20px 30px;
+}
 select[multiple="multiple"] {
 	height: 93px !important;
 }
 
-.mokaine-shortcode-generator img {
+.evolution-shortcode-generator img {
 	margin-left: -7px;
 	margin-right: -2px;
 	margin-top: -2px;

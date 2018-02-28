@@ -994,6 +994,37 @@ function evolution_year_sc() {
 add_shortcode( 'current_year', 'evolution_year_sc' );
 
 
+
+
+/** ---------------------------------------------------------
+ * Alert boxes
+ */
+
+function evolution_alerts_sc( $atts, $content = null ) {
+    
+    extract( shortcode_atts( array( 'color' => '', 'icon_type' => '', 'text' => '', 'extra_class' => '' ), $atts ) );
+    
+    
+    if ( $icon_type ) {
+		
+		$icon_data = '<i class="' . $icon_type .'"></i>';
+
+	}
+    
+    if ( $text ) {
+		$text_data = '<p class="alerttext">' . $text . '</p>';
+	}
+
+    $output = '
+	<div class="alertbox ' . $color . '"> '. $icon_data .' '. $text_data .'</div>';
+
+    return $output;
+
+}
+
+add_shortcode( 'alertbox', 'evolution_alerts_sc' );
+
+
 /** ---------------------------------------------------------
  * Remove empty <p> tags in shortcodes https://gist.github.com/bitfade/4555047
  * http://themeforest.net/forums/thread/how-to-add-shortcodes-in-wp-themes-without-being-rejected/98804?page=4#996848
@@ -1002,7 +1033,7 @@ add_shortcode( 'current_year', 'evolution_year_sc' );
 function evolution_the_content_filter( $content ) {
 
 	/* Array of shortcodes requiring the fix */
-	$block = join( '|', array( 'section', 'onehalf', 'onethird', 'twothirds', 'onefourth', 'threefourths', 'onesixth', 'fivesixth', 'onewhole', 'cta', 'skills_ring','service', 'map', 'timeline', 'timeline_aside', 'mockup', 'mockup_half', 'mockup_screens', 'mockup_aside', 'testimonial', 'quote', 'custom_carousel', 'carousel_item', 'text_widget', 'blog', 'portfolio', 'dribbble' ) );
+	$block = join( '|', array( 'section', 'onehalf', 'onethird', 'twothirds', 'onefourth', 'threefourths', 'onesixth', 'fivesixth', 'onewhole', 'cta', 'skills_ring','service', 'map', 'timeline', 'timeline_aside', 'mockup', 'mockup_half', 'mockup_screens', 'mockup_aside', 'testimonial', 'quote', 'custom_carousel', 'carousel_item', 'text_widget', 'blog', 'portfolio', 'dribbble', 'alertbox' ) );
  
 	/* Opening tag */
 	$rep = preg_replace( "/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/", "[$2$3]" , $content );

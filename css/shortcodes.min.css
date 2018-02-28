@@ -91,6 +91,50 @@ section.greyish {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+/*----------------------------------------------------------------
+    Alertboxes
+----------------------------------------------------------------*/
+
+/* Evolution Alerts */
+.alertbox {
+    line-height: 1.6em;
+    margin: 0 0 1.5em 0;
+    padding: 0.8em;
+    position: relative;
+}
+.alertbox i {
+    margin:10px;
+    font-size: 1.5em;
+    vertical-align:middle;
+}
+.alertbox p {
+    margin-bottom: 0;
+    display: inline;
+}
+
+.alertbox.red {
+    background: #ffe6e3;
+    border: 1px solid #f2c3bf;
+    color: #bf210e;
+}
+
+.alertbox.blue {
+    background: #eaf9ff;
+    border: 1px solid #cae4ef;
+    color: #13475e;
+}
+
+.alertbox.green {
+    background: #edfdd3;
+    border: 1px solid #c4dba0;
+    color: #657e3c;
+}
+
+.alertbox.grey {
+    background: #fbfbfb;
+    border: 1px solid #dfdfdf;
+    color: #373737;
+}
 
 /*----------------------------------------------------------------
 CTA
