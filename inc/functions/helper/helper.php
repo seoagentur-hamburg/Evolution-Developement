@@ -142,7 +142,7 @@ function evolution_cleaner_caption( $output, $attr, $content ) {
     $output .= do_shortcode( $content );
 
     /* Append the caption text. */
-    $output .= '<p class="wp-caption-text"><span class="fa fw fa-camera fa-1x"></span>' . $attr['caption'] . '</p>';
+    $output .= '<p class="wp-caption-text"><span class="icon-camera"></span>' . $attr['caption'] . '</p>';
 
     /* Close the caption </div>. */
     $output .= '</div>';
