@@ -76,6 +76,7 @@ require_once( EVOLUTION_ADMIN_DIR . '/evolution-version.php' );
 
 /* Custom post types */
 require_once( EVOLUTION_INCLUDES_DIR . '/custom-post-types.php' );
+require_once( EVOLUTION_INCLUDES_DIR . '/aq_resizer.php' );
 
 
 // Load Jetpack compatibility file
